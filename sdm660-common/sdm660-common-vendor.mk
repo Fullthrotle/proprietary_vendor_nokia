@@ -16,9 +16,11 @@
 
 PRODUCT_COPY_FILES += \
     vendor/nokia/sdm660-common/proprietary/bin/dpmd:system/bin/dpmd \
+    vendor/nokia/sdm660-common/proprietary/bin/perfservice:system/bin/perfservice \
     vendor/nokia/sdm660-common/proprietary/bin/wfdservice:system/bin/wfdservice \
     vendor/nokia/sdm660-common/proprietary/etc/dpm/dpm.conf:system/etc/dpm/dpm.conf \
     vendor/nokia/sdm660-common/proprietary/etc/init/dpmd.rc:system/etc/init/dpmd.rc \
+    vendor/nokia/sdm660-common/proprietary/etc/init/perfservice.rc:system/etc/init/perfservice.rc \
     vendor/nokia/sdm660-common/proprietary/etc/init/wfdservice.rc:system/etc/init/wfdservice.rc \
     vendor/nokia/sdm660-common/proprietary/etc/permissions/cneapiclient.xml:system/etc/permissions/cneapiclient.xml \
     vendor/nokia/sdm660-common/proprietary/etc/permissions/com.qti.dpmframework.xml:system/etc/permissions/com.qti.dpmframework.xml \
@@ -94,6 +96,11 @@ PRODUCT_COPY_FILES += \
     vendor/nokia/sdm660-common/proprietary/lib/libmmrtpdecoder.so:system/lib/libmmrtpdecoder.so \
     vendor/nokia/sdm660-common/proprietary/lib/libmmrtpencoder.so:system/lib/libmmrtpencoder.so \
     vendor/nokia/sdm660-common/proprietary/lib/libqmi_cci_system.so:system/lib/libqmi_cci_system.so \
+    vendor/nokia/sdm660-common/proprietary/lib/libqti-at.so:system/lib/libqti-at.so \
+    vendor/nokia/sdm660-common/proprietary/lib/libqti-iopd-client_system.so:system/lib/libqti-iopd-client_system.so \
+    vendor/nokia/sdm660-common/proprietary/lib/libqti-perfd-client_system.so:system/lib/libqti-perfd-client_system.so \
+    vendor/nokia/sdm660-common/proprietary/lib/libqti-util_system.so:system/lib/libqti-util_system.so \
+    vendor/nokia/sdm660-common/proprietary/lib/libqti_performance.so:system/lib/libqti_performance.so \
     vendor/nokia/sdm660-common/proprietary/lib/librcc.so:system/lib/librcc.so \
     vendor/nokia/sdm660-common/proprietary/lib/libwfdavenhancements.so:system/lib/libwfdavenhancements.so \
     vendor/nokia/sdm660-common/proprietary/lib/libwfdcodecv4l2.so:system/lib/libwfdcodecv4l2.so \
@@ -110,10 +117,13 @@ PRODUCT_COPY_FILES += \
     vendor/nokia/sdm660-common/proprietary/lib/libwfduibcsinkinterface.so:system/lib/libwfduibcsinkinterface.so \
     vendor/nokia/sdm660-common/proprietary/lib/libwfduibcsrc.so:system/lib/libwfduibcsrc.so \
     vendor/nokia/sdm660-common/proprietary/lib/libwfduibcsrcinterface.so:system/lib/libwfduibcsrcinterface.so \
-    vendor/nokia/sdm660-common/proprietary/lib/vendor.display.color@1.0.so:system/lib/vendor.display.color@1.0.so \
     vendor/nokia/sdm660-common/proprietary/lib/vendor.display.postproc@1.0.so:system/lib/vendor.display.postproc@1.0.so \
+    vendor/nokia/sdm660-common/proprietary/lib/vendor.fih.hardware.box@1.0.so:system/lib/vendor.fih.hardware.box@1.0.so \
+    vendor/nokia/sdm660-common/proprietary/lib/vendor.fih.hardware.iface@1.0.so:system/lib/vendor.fih.hardware.iface@1.0.so \
     vendor/nokia/sdm660-common/proprietary/lib/vendor.qti.esepowermanager@1.0.so:system/lib/vendor.qti.esepowermanager@1.0.so \
     vendor/nokia/sdm660-common/proprietary/lib/vendor.qti.hardware.data.latency@1.0.so:system/lib/vendor.qti.hardware.data.latency@1.0.so \
+    vendor/nokia/sdm660-common/proprietary/lib/vendor.qti.hardware.iop@1.0.so:system/lib/vendor.qti.hardware.iop@1.0.so \
+    vendor/nokia/sdm660-common/proprietary/lib/vendor.qti.hardware.iop@2.0.so:system/lib/vendor.qti.hardware.iop@2.0.so \
     vendor/nokia/sdm660-common/proprietary/lib/vendor.qti.hardware.perf@1.0.so:system/lib/vendor.qti.hardware.perf@1.0.so \
     vendor/nokia/sdm660-common/proprietary/lib/vendor.qti.hardware.qdutils_disp@1.0.so:system/lib/vendor.qti.hardware.qdutils_disp@1.0.so \
     vendor/nokia/sdm660-common/proprietary/lib/vendor.qti.hardware.tui_comm@1.0.so:system/lib/vendor.qti.hardware.tui_comm@1.0.so \
@@ -136,6 +146,8 @@ PRODUCT_COPY_FILES += \
     vendor/nokia/sdm660-common/proprietary/lib64/lib-imsvtutils.so:system/lib64/lib-imsvtutils.so \
     vendor/nokia/sdm660-common/proprietary/lib64/libFileMux.so:system/lib64/libFileMux.so \
     vendor/nokia/sdm660-common/proprietary/lib64/libOmxMux.so:system/lib64/libOmxMux.so \
+    vendor/nokia/sdm660-common/proprietary/lib64/libaptXHD_encoder.so:system/lib64/libaptXHD_encoder.so \
+    vendor/nokia/sdm660-common/proprietary/lib64/libaptX_encoder.so:system/lib64/libaptX_encoder.so \
     vendor/nokia/sdm660-common/proprietary/lib64/libdiag_system.so:system/lib64/libdiag_system.so \
     vendor/nokia/sdm660-common/proprietary/lib64/libdpmctmgr.so:system/lib64/libdpmctmgr.so \
     vendor/nokia/sdm660-common/proprietary/lib64/libdpmfdmgr.so:system/lib64/libdpmfdmgr.so \
@@ -149,24 +161,26 @@ PRODUCT_COPY_FILES += \
     vendor/nokia/sdm660-common/proprietary/lib64/libmmrtpdecoder.so:system/lib64/libmmrtpdecoder.so \
     vendor/nokia/sdm660-common/proprietary/lib64/libmmrtpencoder.so:system/lib64/libmmrtpencoder.so \
     vendor/nokia/sdm660-common/proprietary/lib64/libqmi_cci_system.so:system/lib64/libqmi_cci_system.so \
+    vendor/nokia/sdm660-common/proprietary/lib64/libqti-at.so:system/lib64/libqti-at.so \
+    vendor/nokia/sdm660-common/proprietary/lib64/libqti-iopd-client_system.so:system/lib64/libqti-iopd-client_system.so \
+    vendor/nokia/sdm660-common/proprietary/lib64/libqti-perfd-client_system.so:system/lib64/libqti-perfd-client_system.so \
+    vendor/nokia/sdm660-common/proprietary/lib64/libqti-util_system.so:system/lib64/libqti-util_system.so \
+    vendor/nokia/sdm660-common/proprietary/lib64/libqti_performance.so:system/lib64/libqti_performance.so \
     vendor/nokia/sdm660-common/proprietary/lib64/librcc.so:system/lib64/librcc.so \
     vendor/nokia/sdm660-common/proprietary/lib64/libwfdclient.so:system/lib64/libwfdclient.so \
     vendor/nokia/sdm660-common/proprietary/lib64/libwfdnative.so:system/lib64/libwfdnative.so \
-    vendor/nokia/sdm660-common/proprietary/lib64/vendor.display.color@1.0.so:system/lib64/vendor.display.color@1.0.so \
     vendor/nokia/sdm660-common/proprietary/lib64/vendor.display.postproc@1.0.so:system/lib64/vendor.display.postproc@1.0.so \
+    vendor/nokia/sdm660-common/proprietary/lib64/vendor.fih.hardware.box@1.0.so:system/lib64/vendor.fih.hardware.box@1.0.so \
+    vendor/nokia/sdm660-common/proprietary/lib64/vendor.fih.hardware.iface@1.0.so:system/lib64/vendor.fih.hardware.iface@1.0.so \
     vendor/nokia/sdm660-common/proprietary/lib64/vendor.qti.esepowermanager@1.0.so:system/lib64/vendor.qti.esepowermanager@1.0.so \
     vendor/nokia/sdm660-common/proprietary/lib64/vendor.qti.hardware.data.latency@1.0.so:system/lib64/vendor.qti.hardware.data.latency@1.0.so \
+    vendor/nokia/sdm660-common/proprietary/lib64/vendor.qti.hardware.iop@1.0.so:system/lib64/vendor.qti.hardware.iop@1.0.so \
+    vendor/nokia/sdm660-common/proprietary/lib64/vendor.qti.hardware.iop@2.0.so:system/lib64/vendor.qti.hardware.iop@2.0.so \
     vendor/nokia/sdm660-common/proprietary/lib64/vendor.qti.hardware.perf@1.0.so:system/lib64/vendor.qti.hardware.perf@1.0.so \
     vendor/nokia/sdm660-common/proprietary/lib64/vendor.qti.hardware.qdutils_disp@1.0.so:system/lib64/vendor.qti.hardware.qdutils_disp@1.0.so \
     vendor/nokia/sdm660-common/proprietary/lib64/vendor.qti.hardware.tui_comm@1.0.so:system/lib64/vendor.qti.hardware.tui_comm@1.0.so \
     vendor/nokia/sdm660-common/proprietary/lib64/vendor.qti.hardware.vpp@1.1.so:system/lib64/vendor.qti.hardware.vpp@1.1.so \
-    vendor/nokia/sdm660-common/proprietary/lib64/vendor.qti.imsrtpservice@1.0.so:system/lib64/vendor.qti.imsrtpservice@1.0.so \
-    vendor/nokia/sdm660-common/proprietary/lib/vendor.fih.hardware.box@1.0.so:system/lib/vendor.fih.hardware.box@1.0.so \
-    vendor/nokia/sdm660-common/proprietary/lib/vendor.fih.hardware.iface@1.0.so:system/lib/vendor.fih.hardware.iface@1.0.so \
-    vendor/nokia/sdm660-common/proprietary/lib64/libaptXHD_encoder.so:system/lib64/libaptXHD_encoder.so \
-    vendor/nokia/sdm660-common/proprietary/lib64/libaptX_encoder.so:system/lib64/libaptX_encoder.so \
-    vendor/nokia/sdm660-common/proprietary/lib64/vendor.fih.hardware.box@1.0.so:system/lib64/vendor.fih.hardware.box@1.0.so \
-    vendor/nokia/sdm660-common/proprietary/lib64/vendor.fih.hardware.iface@1.0.so:system/lib64/vendor.fih.hardware.iface@1.0.so
+    vendor/nokia/sdm660-common/proprietary/lib64/vendor.qti.imsrtpservice@1.0.so:system/lib64/vendor.qti.imsrtpservice@1.0.so
 
 PRODUCT_PACKAGES += \
     PRODUCT_PACKAGES += \
@@ -183,4 +197,6 @@ PRODUCT_PACKAGES += \
     vendor.display.color@1.0 \
     uceShimService \
     vendor.qti.hardware.fm@1.0.so \
-    WfdCommon
+    WfdCommon \
+    QPerformance \
+    UxPerformance
